@@ -1,6 +1,6 @@
 {
   "name": "mock-my-ride",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Creates object copy with mocked functions and ability to mock value of each",
   "main": "lib/main/index.js",
   "module": "lib/module/index.js",
@@ -33,9 +33,7 @@
     "url": "https://github.com/HartleyOriginalJam/mock-my-ride/issues"
   },
   "homepage": "https://github.com/HartleyOriginalJam/mock-my-ride#readme",
-  "dependencies": {
-    "jest": "^25.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
@@ -71,6 +69,7 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.4",
-    "rollup-plugin-terser": "^5.2.0"
+    "rollup-plugin-terser": "^5.2.0",
+    "jest": "^25.1.0"
   }
 }
