@@ -1,10 +1,9 @@
 import { mockFile, mockFunction } from './';
-mockFile('../../test/test-func');
+import * as functionsToTest from '../../test/test-func';
+mockFile(functionsToTest);
 
-const functions = require('../../test/test-func');
-const isString = functions.default;
-const isNumber = functions.isNumber;
-const someValue = functions.someValue;
+const { isNumber, someValue } = { ...functionsToTest };
+const isString = functionsToTest.default;
 
 describe('mockFile', () => {
   it('returns mocked default function', () => {

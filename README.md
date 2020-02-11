@@ -10,20 +10,20 @@ Also creates a function to mock the return value of an imported function
 # Usage example
 
 ```javascript
-import * as mockMyRide from 'mock-my-ride');
-// OR
-// const mockMyRide = require('mock-my-ride');
+import { mockFile, mockFunction } from 'mock-my-ride';
 
-mockMyRide.mockFile('./filename');
+import * as funcsToMock from './sub-func';
+mockFile(funcsToMock);
 
-import fnUnderTest from './testSubject';
-import fnToMock from './filename';
+// Functions under test
+import { isString } from './index';
 
-describe('fnUnderTest', () => {
-    it('returns true when fnToMock is true', () => {
-      mockMyRide.mockFunctionValue(fnToMock, true);
+describe('isString', () => {
+  it('return true when isStringSub is true', () => {
+    mockFunction(funcsToMock.isStringSub, true);
 
-      expect(fnUnderTest()).toEqual(true);
-    }
-}
+    expect(isString()).toEqual(true);
+  });
+});
+
 ```
