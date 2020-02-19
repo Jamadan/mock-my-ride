@@ -1,6 +1,6 @@
 {
   "name": "mock-my-ride",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Creates object copy with mocked functions and ability to mock value of each",
   "main": "lib/main/index.js",
   "module": "lib/module/index.js",
