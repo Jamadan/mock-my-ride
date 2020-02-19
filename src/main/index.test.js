@@ -1,9 +1,6 @@
-import { mockFile, mockFunction } from './';
-import * as functionsToTest from '../../test/test-func';
-mockFile(functionsToTest);
-
-const { isNumber, someValue } = { ...functionsToTest };
-const isString = functionsToTest.default;
+import { mockFunctions, setMockValue } from './';
+mockFunctions(require('../../test/test-func'));
+import isString, { isNumber, someValue } from '../../test/test-func';
 
 describe('mockFile', () => {
   it('returns mocked default function', () => {
@@ -19,13 +16,13 @@ describe('mockFile', () => {
   });
 
   it('mocks function values', () => {
-    mockFunction(isNumber, false);
-    expect(isNumber()).toEqual(false);
-
-    mockFunction(isNumber, true);
+    setMockValue(isNumber, true);
     expect(isNumber()).toEqual(true);
 
-    mockFunction(isNumber, 1);
+    setMockValue(isNumber, true);
+    expect(isNumber()).toEqual(true);
+
+    setMockValue(isNumber, 1);
     expect(isNumber()).toEqual(1);
   });
 });

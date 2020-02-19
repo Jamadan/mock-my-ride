@@ -1,1 +1,1 @@
-export { mockFile, mockFunction } from './main';
+export { mockFunctions, setMockValue } from './main';

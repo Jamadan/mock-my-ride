@@ -1,4 +1,4 @@
-export const mockFile = functionsToMock => {
+export const mockFunctions = functionsToMock => {
   Object.keys(functionsToMock).forEach(fn => {
     if ({}.toString.call(functionsToMock[fn]) === '[object Function]') {
       Object.assign(
@@ -10,10 +10,8 @@ export const mockFile = functionsToMock => {
       );
     }
   });
-
-  return functionsToMock;
 };
 
-export const mockFunction = (fn, value) => {
+export const setMockValue = (fn, value) => {
   fn.mockImplementation(() => value);
 };
