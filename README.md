@@ -10,19 +10,27 @@ Also creates a function to mock the return value of an imported function
 # Usage example
 
 ```javascript
-import { mockFile, mockFunction } from 'mock-my-ride';
+import { mockFunctions, setMockValue } from 'mock-my-ride';
 
-import * as funcsToMock from './sub-func';
-mockFile(funcsToMock);
+mockFile(require('./sub-func'));
+import isStringSub, { isNumberSub } from './sub-func';
 
 // Functions under test
-import { isString } from './index';
+import isString, { isNumber } from './index';
 
 describe('isString', () => {
   it('return true when isStringSub is true', () => {
-    mockFunction(funcsToMock.isStringSub, true);
+    mockFunction(isStringSub, true);
 
     expect(isString()).toEqual(true);
+  });
+});
+
+describe('isNumber', () => {
+  it('return true when isNumberSub is true', () => {
+    mockFunction(isNumberSub, true);
+
+    expect(isNumber()).toEqual(true);
   });
 });
 
