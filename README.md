@@ -12,7 +12,7 @@ Also creates a function to mock the return value of an imported function
 ```javascript
 import { mockFunctions, setMockValue } from 'mock-my-ride';
 
-mockFile(require('./sub-func'));
+mockFunctions(require('./sub-func'));
 import isStringSub, { isNumberSub } from './sub-func';
 
 // Functions under test
@@ -20,7 +20,7 @@ import isString, { isNumber } from './index';
 
 describe('isString', () => {
   it('return true when isStringSub is true', () => {
-    mockFunction(isStringSub, true);
+    setMockValue(isStringSub, true);
 
     expect(isString()).toEqual(true);
   });
@@ -28,7 +28,7 @@ describe('isString', () => {
 
 describe('isNumber', () => {
   it('return true when isNumberSub is true', () => {
-    mockFunction(isNumberSub, true);
+    setMockValue(isNumberSub, true);
 
     expect(isNumber()).toEqual(true);
   });
